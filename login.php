@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8"/>
         <title>Login Form</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <!-- Styles -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-        <link rel="stylesheet" href="css/bootstrap-custom.css">
-
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css"/>
+        <link rel="stylesheet" href="css/bootstrap-custom.css"/>
+        <link rel="stylesheet" href="css/login.css"/>
 
         <!-- HTML5 Shim, for IE6-IE8 support of HTML5 elements -->
         <!--[if lt IE 9]>
@@ -68,7 +68,7 @@
                                         <div class="controls">
                                             <div class="input-prepend">
                                                 <span class="add-on"><i class="icon-user"></i></span>
-                                                <input type="text" placeholder="First Name" name="fname" id="inputUsername" class="input-large"/>
+                                                <input type="text" placeholder="User Id" name="fname" id="inputUsername" class="input-large"/>
                                             </div>
                                         </div>
                                     </div>
@@ -77,7 +77,7 @@
                                         <div class="controls">
                                             <div class="input-prepend">
                                                 <span class="add-on"><i class="icon-lock"></i></span>
-                                                <input type="Password" placeholder="Password" name="passwd" id="inputPassword" class="input-large" id="passwd"/>
+                                                <input type="Password" placeholder="Password" name="passwd" id="inputPassword" class="input-large" />
                                             </div>
                                         </div>   
                                     </div>
@@ -91,7 +91,7 @@
                                             <button type="button" class="btn">Help</button>
                                         </div>
                                     </div>	
-                                    <div class="alert alert-error">
+                                    <div class="alert alert-error" style="visibility: hidden;">
                                         <button type="button" class="close" data-dismiss="alert">×</button>
                                         <strong>Access Denied!</strong> Please provide valid authorization.
                                     </div>
@@ -107,39 +107,75 @@
                                     <div class="control-group">
                                         <label class="control-label" for="inputCompanyName">Company Name</label>
                                         <div class="controls">
-                                            <input type="text" id="inputCompanyName" placeholder="E.g. Some Software Pvt. Ltd.">
+                                            <div class="input-prepend">
+                                                <span class="add-on"><i class="icon-briefcase"></i></span>
+                                                <input type="text" placeholder="E.g. Some Software Pvt. Ltd." id="inputCompanyName" class="input-large" />
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="control-group">
                                         <label class="control-label" for="inputFirst">First Name</label>
                                         <div class="controls">
-                                            <input type="text" id="inputFirst" placeholder="E.g. Ashwin">
+                                            <div class="input-prepend">
+                                                <span class="add-on"><i class="icon-user"></i></span>
+                                                <input type="text" placeholder="E.g. Ashutosh" id="inputFirst" class="input-large" />
+                                            </div>
+                                           
                                         </div>
                                     </div>
                                     <div class="control-group">
                                         <label class="control-label" for="inputLast">Last Name</label>
                                         <div class="controls">
-                                            <input type="text" id="inputLast" placeholder="E.g. Hegde">
+                                            <div class="input-prepend">
+                                                <span class="add-on"><i class="icon-user"></i></span>
+                                                <input type="text" placeholder="E.g. Zambare" id="inputLast" class="input-large" />
+                                            </div>
+                                            
+                          
                                         </div>
                                     </div>
                                     <div class="control-group">
                                         <label class="control-label" for="inputEmail">Email</label>
                                         <div class="controls">
-                                            <input type="text" id="inputEmail" placeholder="E.g. ashwinh@cybage.com">
+                                            <div class="input-prepend">
+                                                <span class="add-on"><i class="icon-envelope"></i></span>
+                                                <input type="text" placeholder="E.g. jobs@saisoft.co.in" id="inputEmail" class="input-large" />
+                                            </div>
+                   
                                         </div>
                                     </div>
                                     <div class="control-group">
                                         <label class="control-label" for="inputUser">Username</label>
-                                        <div class="controls">
-                                            <input type="text" id="inputUser" placeholder="E.g. ashwinhegde">
+                                        <div class="controls">            
+                                            <div class="input-prepend">
+                                                <span class="add-on"><i class="icon-user"></i></span>
+                                                <input type="text" placeholder="E.g. ashutoshzambare" id="inputUserId" class="input-large" />
+                                            </div>
+                                           
                                         </div>
                                     </div>
                                     <div class="control-group">
-                                        <label class="control-label" for="inputPassword">Password</label>
+                                        <label class="control-label" for="inputUserPassword">Password</label>
                                         <div class="controls">
-                                            <input type="password" id="inputPassword" placeholder="Min. 8 Characters">
+                                            <div class="input-prepend">
+                                                <span class="add-on"><i class="icon-briefcase"></i></span>
+                                                <input type="password" placeholder="Min. 8 Characters AlphaNums" id="inputUserPassword" class="input-large" />
+                                            </div>
+                                          
                                         </div>
                                     </div>
+                                    
+                                     <div class="control-group">
+                                        <label class="control-label" for="inputPassword">Confirm Password</label>
+                                        <div class="controls">
+                                            <div class="input-prepend">
+                                                <span class="add-on"><i class="icon-briefcase"></i></span>
+                                                <input type="password" placeholder="Type above Password" id="inputconfirmPassword" class="input-large" />
+                                            </div>
+                                          
+                                        </div>
+                                    </div>
+                                    
                                     <div class="control-group">
                                         <div class="controls">
                                             <label class="checkbox">
@@ -149,7 +185,7 @@
                                             <button type="button" class="btn">Help</button>
                                         </div>
                                     </div>	
-                                    <div class="alert alert-info">
+                                    <div class="alert alert-info" style="visibility: hidden;">
                                         <button type="button" class="close" data-dismiss="alert">×</button>
                                         <strong>Confirmation: </strong> A confirmation email has been sent to your email.<br>
                                         Thank you for your registration.
@@ -161,22 +197,6 @@
 
                 </div>
             </div>
-            <!-- Footer
-            ================================================== -->
-            <footer class="footer" id="footer">
-                <div class="container">
-                    <p>Author : <a href="http://twitter.com/megagigasoft" target="_blank">@megagigasoft</a></p>
-                    <ul class="footer-links">
-                        <li><a href="http://blog.megagigasoft.com">Blog</a></li>
-                        <li class="muted">&middot;</li>
-                        <li><a href="http://www.megagigasoft.com">Website</a></li>
-                        <li class="muted">&middot;</li>
-                        <li><a href="http://twitter.com/megagigasoft">Twitter</a></li>
-                        <li class="muted">&middot;</li>
-                        <li><a href="http://facebook.com/megagigasoft">Facebook</a></li>
-                    </ul>
-                </div>
-            </footer>
         </div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
