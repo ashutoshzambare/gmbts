@@ -67,7 +67,7 @@
                                         <div class="controls">
                                             <div class="input-prepend">
                                                 <span class="add-on"><i class="icon-user"></i></span>
-                                                <input type="text" placeholder="User Id" name="fname" id="inputUsername" class="input-large"/>
+                                                <input type="text" placeholder="Only 6 Charaters" name="fname" id="inputUsername" class="input-large"/>
                                             </div>
                                         </div>
                                     </div>
@@ -76,7 +76,7 @@
                                         <div class="controls">
                                             <div class="input-prepend">
                                                 <span class="add-on"><i class="icon-lock"></i></span>
-                                                <input type="Password" placeholder="Password" name="passwd" id="inputPassword" class="input-large" />
+                                                <input type="Password" placeholder="Only 6 Charaters" name="passwd" id="inputPassword" class="input-large" />
                                             </div>
                                         </div>   
                                     </div>
@@ -180,7 +180,7 @@
                                             <label class="checkbox">
                                                 <input type="checkbox"> I agree all your <a href="#">Terms of Services</a>
                                             </label>
-                                            <button type="button" class="btn btn-success">Sign Up</button>
+                                            <button type="button" class="btn btn-success" id="btn_signup">Sign Up</button>
                                             <button type="button" class="btn">Help</button>
                                         </div>
                                     </div>	
