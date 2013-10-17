@@ -14,7 +14,7 @@ $(document).ready(function() {
 	
 	$("#forgotPasswordLnk").bind("click", function() {
       
-       bootbox.prompt("What is your name?", function(result) {
+       bootbox.prompt(forgotPasswordMailReq, function(result) {
 		if (result === null) {
 			console.log("Prompt dismissed");
 		} else {

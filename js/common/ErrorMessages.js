@@ -11,3 +11,4 @@ var invalidEmail = "Email is Invalid";
 var reqUserInput = "UserName is Invalid";
 var reqPasswordInput = "Password is Invalid";
 var reqconPasswordInput = "Confirm Password Invalid";
+var forgotPasswordMailReq = "Please enter your email id to reset password"

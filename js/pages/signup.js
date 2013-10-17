@@ -15,20 +15,6 @@ $(document).ready(function() {
         
     })
     
-    
-    $("#inputUsername").bind("keyup", function() {
-        var inputArray = new Array();
-        inputArray.push("inputUserId,string,"+reqUserInput);
-        inputArray.push("inputconfirmPassword,string,"+reqPasswordInput);
-        validateAndShowError(inputArray, "loginmsg");
-    });
-    
-    $("#inputPassword").bind("keyup", function() {
-        var inputArray = new Array();
-        inputArray.push("inputUserId,string,"+reqUserInput);
-        inputArray.push("inputconfirmPassword,string,"+reqPasswordInput);
-        validateAndShowError(inputArray, "loginmsg");
-    });
 });
     
     function validateAndShowError(arrayInput, errorDiv){

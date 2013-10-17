@@ -37,7 +37,7 @@
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li class="active"><a href="#">Login</a></li>
-                            <li><a href="#">About</a></li>
+                            <!--<li><a href="#">About</a></li>-->
                         </ul>
                         <ul class="nav pull-right">
                             <li>
