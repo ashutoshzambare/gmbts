@@ -2,15 +2,14 @@
 <html lang="en">
     <head>
         <meta charset="utf-8"/>
-        <title>Login Form</title>
+        <title>GMBTS - Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
         <!-- Styles -->
         <link rel="stylesheet" href="css/bootstrap.min.css"/>
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css"/>
         <link rel="stylesheet" href="css/bootstrap-custom.css"/>
-        <link rel="stylesheet" href="css/login.css"/>
-
+        <link rel="stylesheet" href="css/common.css"/>
+        
         <!-- HTML5 Shim, for IE6-IE8 support of HTML5 elements -->
         <!--[if lt IE 9]>
                 <script src="js/html5shiv.js"></script>
@@ -23,7 +22,7 @@
         <!-- Navbar
     ================================================== -->
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container"> 
 
@@ -37,7 +36,7 @@
                     <a class="brand" href="#">GMBTS</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li class="active"><a href="#">Home</a></li>
+                            <li class="active"><a href="#">Login</a></li>
                             <li><a href="#">About</a></li>
                         </ul>
                         <ul class="nav pull-right">
@@ -87,11 +86,11 @@
                                                 <input type="checkbox"> Keep me signed in   ¦
                                                 <a href="#" class="btn btn-link">Forgot my password</a>
                                             </label>
-                                            <button type="submit" class="btn btn-success">Sign In</button>
+                                            <button type="button" class="btn btn-success" id="btn_login">Sign In</button>
                                             <button type="button" class="btn">Help</button>
                                         </div>
                                     </div>	
-                                    <div class="alert alert-error" style="visibility: hidden;">
+                                    <div class="alert alert-error visibility" id="loginmsg">
                                         <button type="button" class="close" data-dismiss="alert">×</button>
                                         <strong>Access Denied!</strong> Please provide valid authorization.
                                     </div>
@@ -181,11 +180,11 @@
                                             <label class="checkbox">
                                                 <input type="checkbox"> I agree all your <a href="#">Terms of Services</a>
                                             </label>
-                                            <button type="submit" class="btn btn-success">Sign Up</button>
+                                            <button type="button" class="btn btn-success">Sign Up</button>
                                             <button type="button" class="btn">Help</button>
                                         </div>
                                     </div>	
-                                    <div class="alert alert-info" style="visibility: hidden;">
+                                    <div class="alert alert-info visibility"  id="signupmsg">
                                         <button type="button" class="close" data-dismiss="alert">×</button>
                                         <strong>Confirmation: </strong> A confirmation email has been sent to your email.<br>
                                         Thank you for your registration.
@@ -198,11 +197,14 @@
                 </div>
             </div>
         </div>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
+        <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/bootstrap-button.js"></script>
         <script type="text/javascript" src="js/application.js"></script>
+        <script type="text/javascript" src="js/common/ErrorMessages.js"></script>
+        <script src="js/pages/login.js"></script>
+        <script src="js/common/app.js"></script>
+
 
     </body>
 </html>

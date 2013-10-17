@@ -1,5 +1,9 @@
 .heading{
-    background-color: #CCCCCC;
+    background-color: #8FBC8F;
     margin: -18px -18px 14px;
     padding: 5px 10px 1px 24px;
+}
+.visibility{
+    
+    display:none;
 }
