@@ -6,6 +6,7 @@ background: url("../img/home-slant-pattern.png") repeat scroll 0 0 transparent  
     background-color: #8FBC8F;
     margin: -18px -18px 14px;
     padding: 5px 10px 1px 24px;
+    border-radius: 5px 5px 0 0;
 }
 .visibility{
     display:none;

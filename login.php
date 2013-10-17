@@ -67,7 +67,7 @@
                                         <div class="controls">
                                             <div class="input-prepend">
                                                 <span class="add-on"><i class="icon-user"></i></span>
-                                                <input type="text" placeholder="Only 6 Charaters" name="fname" id="inputUsername" class="input-large"/>
+                                                <input type="text" placeholder="Only 8 Alphanums" name="fname" id="inputUsername" class="input-large"/>
                                             </div>
                                         </div>
                                     </div>
@@ -76,7 +76,7 @@
                                         <div class="controls">
                                             <div class="input-prepend">
                                                 <span class="add-on"><i class="icon-lock"></i></span>
-                                                <input type="Password" placeholder="Only 6 Charaters" name="passwd" id="inputPassword" class="input-large" />
+                                                <input type="Password" placeholder="Only 8 Alphanums" name="passwd" id="inputPassword" class="input-large" />
                                             </div>
                                         </div>   
                                     </div>
@@ -97,7 +97,7 @@
                                 </form>	
                             </div>                           
                         </div>
-                        <div class="span6">
+                        <div class="span6" >
                             <div class="area">
                                 <form id="signup" class="form-horizontal well" style="margin: 100px 0 20px;">
                                     <div class="heading">
@@ -148,7 +148,7 @@
                                         <div class="controls">            
                                             <div class="input-prepend">
                                                 <span class="add-on"><i class="icon-user"></i></span>
-                                                <input type="text" placeholder="E.g. ashutoshzambare" id="inputUserId" class="input-large" />
+                                                <input type="text" placeholder="Only 8 Alphanums" id="inputUserId" class="input-large" />
                                             </div>
                                            
                                         </div>
@@ -158,7 +158,7 @@
                                         <div class="controls">
                                             <div class="input-prepend">
                                                 <span class="add-on"><i class="icon-briefcase"></i></span>
-                                                <input type="password" placeholder="Min. 8 Characters AlphaNums" id="inputUserPassword" class="input-large" />
+                                                <input type="password" placeholder="Only 8 Alphanums" id="inputUserPassword" class="input-large" />
                                             </div>
                                           
                                         </div>
@@ -184,7 +184,7 @@
                                             <button type="button" class="btn">Help</button>
                                         </div>
                                     </div>	
-                                    <div class="alert alert-info visibility"  id="signupmsg">
+                                    <div class="alert alert-error visibility"  id="signupmsg">
                                         <button type="button" class="close" data-dismiss="alert">×</button>
                                         <strong>Confirmation: </strong> A confirmation email has been sent to your email.<br>
                                         Thank you for your registration.
@@ -205,8 +205,9 @@
 		<script type="text/javascript" src="js/bootbox.min.js"></script>
 		
         <script src="js/pages/login.js"></script>
+        <script src="js/pages/signup.js"></script>
         <script src="js/common/app.js"></script>
-
+         
 
     </body>
 </html>
