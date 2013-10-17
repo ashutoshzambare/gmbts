@@ -84,7 +84,7 @@
                                         <div class="controls">
                                             <label class="checkbox">
                                                 <input type="checkbox"> Keep me signed in   ¦
-                                                <a href="#" class="btn btn-link">Forgot my password</a>
+                                                <a href="#" class="btn btn-link" id="forgotPasswordLnk">Forgot my password</a>
                                             </label>
                                             <button type="button" class="btn btn-success" id="btn_login">Sign In</button>
                                             <button type="button" class="btn">Help</button>
@@ -202,6 +202,8 @@
         <script type="text/javascript" src="js/bootstrap-button.js"></script>
         <script type="text/javascript" src="js/application.js"></script>
         <script type="text/javascript" src="js/common/ErrorMessages.js"></script>
+		<script type="text/javascript" src="js/bootbox.min.js"></script>
+		
         <script src="js/pages/login.js"></script>
         <script src="js/common/app.js"></script>
 

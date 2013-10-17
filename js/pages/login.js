@@ -11,6 +11,19 @@ $(document).ready(function() {
     //appstate = trans.TRAN_LOGIN;
         
     });
+	
+	$("#forgotPasswordLnk").bind("click", function() {
+      
+       bootbox.prompt("What is your name?", function(result) {
+		if (result === null) {
+			console.log("Prompt dismissed");
+		} else {
+			console.log("Hi <b>"+result+"</b>");
+		}
+		});
+        
+    });
+	
     
      $("#inputUsername").bind("keyup", function() {
         var inputArray = new Array();
