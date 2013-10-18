@@ -158,7 +158,7 @@
                                         <div class="controls">
                                             <div class="input-prepend">
                                                 <span class="add-on"><i class="icon-briefcase"></i></span>
-                                                <input type="password" placeholder="Only 8 Alphanums" id="inputUserPassword" class="input-large" />
+                                                <input type="password" placeholder="Only 8 Alphanums" id="UserPassword" class="input-large" />
                                             </div>
                                           
                                         </div>

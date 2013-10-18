@@ -6,6 +6,18 @@ function validation(value, type, size) {
     if (value === null) return false;
 
     switch(type) {
+        case "username":
+            RegEx = /^[a-zA-Z0-9._-]{8,8}$/;
+            break;
+        case "password":
+            RegEx = /^[A-Za-z0-9!@#$%^&*()_]{8,8}$/;
+            break;
+        case "conpass":
+            if ($("#UserPassword").val() != $("#inputconfirmPassword").val() ) 
+                return false;
+            else
+                return true;
+            break;
         case "amount":
             if (value == 0) return false;
             RegEx = /^\d*[0-9](\.\d{1,2})?$/;
@@ -36,7 +48,7 @@ function validation(value, type, size) {
             if (testdate < today.getTime() ) return false;
             break;
         case "string":
-            RegEx = /^[a-zA-Z0-9._-]{6,6}$/; 
+            RegEx = /^[a-zA-Z0-9 ]{6,25}$/; 
             break;
         case "creditcard":
             // based on http://en.wikipedia.org/wiki/Luhn

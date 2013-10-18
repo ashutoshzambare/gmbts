@@ -5,10 +5,10 @@
 var invalidUserInput = "Invalid username input";
 var invalidPasswordInput = "Invalid password input";
 var invalidCompanyName = "Company name is mandetory";
-var invalidFirstName = "Firts name is mandetory";
+var invalidFirstName = "First name is mandetory";
 var invalidLastName = "Last name is mandetory";
 var invalidEmail = "Email is Invalid";
 var reqUserInput = "UserName is Invalid";
 var reqPasswordInput = "Password is Invalid";
 var reqconPasswordInput = "Confirm Password Invalid";
-var forgotPasswordMailReq = "Please enter your email id to reset password"
+var forgotPasswordMailReq = "Please enter your email id to ";

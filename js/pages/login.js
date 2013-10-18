@@ -1,9 +1,10 @@
 $(document).ready(function() {
+     $("#login").trigger("reset");
     $("#btn_login").bind("click", function() {
       
         var inputArray = new Array();
-        inputArray.push("inputUsername,string,"+invalidUserInput);
-        inputArray.push("inputPassword,string,"+invalidPasswordInput);
+        inputArray.push("inputUsername,username,"+invalidUserInput);
+        inputArray.push("inputPassword,password,"+invalidPasswordInput);
         validateAndShowError(inputArray, "loginmsg");
     // showProgress();
     //login($("#username").val(), $("#password").val());
@@ -27,15 +28,15 @@ $(document).ready(function() {
     
      $("#inputUsername").bind("keyup", function() {
         var inputArray = new Array();
-        inputArray.push("inputUsername,string,"+invalidUserInput);
-        inputArray.push("inputPassword,string,"+invalidPasswordInput);
+        inputArray.push("inputUsername,username,"+invalidUserInput);
+        inputArray.push("inputPassword,password,"+invalidPasswordInput);
         validateAndShowError(inputArray, "loginmsg");
     });
     
     $("#inputPassword").bind("keyup", function() {
         var inputArray = new Array();
-        inputArray.push("inputUsername,string,"+invalidUserInput);
-        inputArray.push("inputPassword,string,"+invalidPasswordInput);
+        inputArray.push("inputUsername,username,"+invalidUserInput);
+        inputArray.push("inputPassword,password,"+invalidPasswordInput);
         validateAndShowError(inputArray, "loginmsg");
     });
 });

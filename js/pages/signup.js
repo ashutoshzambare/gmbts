@@ -8,12 +8,96 @@ $(document).ready(function() {
         inputArray.push("inputLast,string,"+invalidLastName);
         inputArray.push("inputEmail,email,"+invalidEmail);
         inputArray.push("inputUserId,username,"+reqUserInput);
-        inputArray.push("inputUserPassword,password,"+reqPasswordInput);
+        inputArray.push("UserPassword,password,"+reqPasswordInput);
         inputArray.push("inputconfirmPassword,conpass,"+reqconPasswordInput);
         validateAndShowError(inputArray, "signupmsg");
         
         
     })
+    
+     $("#inputCompanyName").bind("keyup", function() {
+        var inputArray = new Array();
+        inputArray.push("inputCompanyName,string,"+invalidCompanyName);
+        inputArray.push("inputFirst,string,"+invalidFirstName);
+        inputArray.push("inputLast,string,"+invalidLastName);
+        inputArray.push("inputEmail,email,"+invalidEmail);
+        inputArray.push("inputUserId,username,"+reqUserInput);
+        inputArray.push("UserPassword,password,"+reqPasswordInput);
+        inputArray.push("inputconfirmPassword,conpass,"+reqconPasswordInput);
+        validateAndShowError(inputArray, "signupmsg");
+    });
+    
+      $("#inputFirst").bind("keyup", function() {
+        var inputArray = new Array();
+        inputArray.push("inputCompanyName,string,"+invalidCompanyName);
+        inputArray.push("inputFirst,string,"+invalidFirstName);
+        inputArray.push("inputLast,string,"+invalidLastName);
+        inputArray.push("inputEmail,email,"+invalidEmail);
+        inputArray.push("inputUserId,username,"+reqUserInput);
+        inputArray.push("UserPassword,password,"+reqPasswordInput);
+        inputArray.push("inputconfirmPassword,conpass,"+reqconPasswordInput);
+        validateAndShowError(inputArray, "signupmsg");
+    });
+    
+    $("#inputLast").bind("keyup", function() {
+        var inputArray = new Array();
+         inputArray.push("inputCompanyName,string,"+invalidCompanyName);
+        inputArray.push("inputFirst,string,"+invalidFirstName);
+        inputArray.push("inputLast,string,"+invalidLastName);
+        inputArray.push("inputEmail,email,"+invalidEmail);
+        inputArray.push("inputUserId,username,"+reqUserInput);
+        inputArray.push("UserPassword,password,"+reqPasswordInput);
+        inputArray.push("inputconfirmPassword,conpass,"+reqconPasswordInput);
+        validateAndShowError(inputArray, "signupmsg");
+    });
+    
+    $("#inputEmail").bind("keyup", function() {
+        var inputArray = new Array();
+         inputArray.push("inputCompanyName,string,"+invalidCompanyName);
+        inputArray.push("inputFirst,string,"+invalidFirstName);
+        inputArray.push("inputLast,string,"+invalidLastName);
+        inputArray.push("inputEmail,email,"+invalidEmail);
+        inputArray.push("inputUserId,username,"+reqUserInput);
+        inputArray.push("UserPassword,password,"+reqPasswordInput);
+        inputArray.push("inputconfirmPassword,conpass,"+reqconPasswordInput);
+        validateAndShowError(inputArray, "signupmsg");
+    });
+    
+    $("#inputUserId").bind("keyup", function() {
+        var inputArray = new Array();
+         inputArray.push("inputCompanyName,string,"+invalidCompanyName);
+        inputArray.push("inputFirst,string,"+invalidFirstName);
+        inputArray.push("inputLast,string,"+invalidLastName);
+        inputArray.push("inputEmail,email,"+invalidEmail);
+        inputArray.push("inputUserId,username,"+reqUserInput);
+        inputArray.push("UserPassword,password,"+reqPasswordInput);
+        inputArray.push("inputconfirmPassword,conpass,"+reqconPasswordInput);
+        validateAndShowError(inputArray, "signupmsg");
+    });
+    
+     $("#UserPassword").bind("keyup", function() {
+        var inputArray = new Array();
+         inputArray.push("inputCompanyName,string,"+invalidCompanyName);
+        inputArray.push("inputFirst,string,"+invalidFirstName);
+        inputArray.push("inputLast,string,"+invalidLastName);
+        inputArray.push("inputEmail,email,"+invalidEmail);
+        inputArray.push("inputUserId,username,"+reqUserInput);
+        inputArray.push("UserPassword,password,"+reqPasswordInput);
+        inputArray.push("inputconfirmPassword,conpass,"+reqconPasswordInput);
+        validateAndShowError(inputArray, "signupmsg");
+    });
+    
+     $("#inputconfirmPassword").bind("keyup", function() {
+        var inputArray = new Array();
+         inputArray.push("inputCompanyName,string,"+invalidCompanyName);
+        inputArray.push("inputFirst,string,"+invalidFirstName);
+        inputArray.push("inputLast,string,"+invalidLastName);
+        inputArray.push("inputEmail,email,"+invalidEmail);
+        inputArray.push("inputUserId,username,"+reqUserInput);
+        inputArray.push("UserPassword,password,"+reqPasswordInput);
+        inputArray.push("inputconfirmPassword,conpass,"+reqconPasswordInput);
+        validateAndShowError(inputArray, "signupmsg");
+    });
     
 });
     
