@@ -7,14 +7,14 @@ session_start();
 require 'Slim/Slim.php';
 require 'dao/dbconnect.php';
 require 'ResponceObject.php';
-require 'services/*.php';
-require_once('../FirePHPCore/fb.php');
+//require 'services/*.php';
+//require_once('../FirePHPCore/fb.php');
 
 
 //$login = $log->getLogin();
 //$userLog = $log->isCurrentLoggedUser();
 
-$logo = new logoutFunction();
+/*$logo = new logoutFunction();
 $logout = $logo->getLogout(); 
 
 $getusr = new getUserFunction();
@@ -24,7 +24,8 @@ $clog = new loggedUserFunction();
 $currUser = $clog->getCurrentLoggedinUser();
 
 $mag = new Magazine();
-$maga = $mag->getMagazine();
+$maga = $mag->getMagazine();*/
+
 
 $app = new Slim();
 //$app->get('/wines', 'getWines');
@@ -49,10 +50,9 @@ $app->run();
     $login = json_decode($request->getBody());
     fb('$login->loginName' + $login->loginName);
     fb('$login->loginPassword' + $login->loginPassword);
-   // $loginCaptcha = $login->loginCaptcha;
-    $logs = new loginFunctions();
-    $check = $logs->getlogin($login);  }
-   /*try {
+    //$logs = new loginFunctions();
+    //$check = $logs->getlogin($login);
+      try {
         if ($loginCaptcha == $_SESSION["code"]) {
             fb("I am here");
             $user_id = $login->loginName;
@@ -60,7 +60,7 @@ $app->run();
             $user = R::findOne('users', 'UserID=:userId', array(':userId' => $user_id));
             $userPassword = $user->Password;
             fb($user);
-            if ($user && ($password == $userPassword)) {
+            if ($user && ($password == $userPassword)) {             
                 $_SESSION['UserID'] = $user->UserID;
                 $_SESSION['LoginID'] = $user->LoginID;
                 $_SESSION['Gender'] = $user->Gender;
@@ -71,20 +71,19 @@ $app->run();
                 $resDto->success = false;
                 $resDto->errorcode = 1;
                 $resDto->errorMessage = $resDto->INVALID_USER;
-                echo "success";
+                echo"success";
                 echo json_encode($resDto);
-                
             } else {
                 echo '{"error":{"text": "Wrong Username or Password"}}';
             }
             $db = null;
-        } else {
-            echo '{"error":{"text": "Wrong Captcha Entered"}}';
-        }
+        } 
     } catch (PDOException $e) {
         echo '{"error":{"text":' . $e->getMessage() . '}}';
     }
-}*/ 
+    
+  }
+  
   
 
 function getLogout() {
@@ -97,14 +96,9 @@ function getLogout() {
 }
 
 function getUsers() {
-   // $sql = "SELECT * FROM users";
+  
     try {
-       /* $db = getConnection();
-        $stmt = $db->prepare($sql);
-        $stmt->execute();
-        $user = $stmt->fetchAll();
-        fb($user);
-        $db = null;*/
+      
         $user = R::find('users');
         echo ($user);
     } catch (PDOException $e) {

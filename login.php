@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css"/>
         <link rel="stylesheet" href="css/bootstrap-custom.css"/>
         <link rel="stylesheet" href="css/common.css"/>
+
         
         <!-- HTML5 Shim, for IE6-IE8 support of HTML5 elements -->
         <!--[if lt IE 9]>
@@ -67,7 +68,7 @@
                                         <div class="controls">
                                             <div class="input-prepend">
                                                 <span class="add-on"><i class="icon-user"></i></span>
-                                                <input type="text" placeholder="Only 8 Alphanums" name="fname" id="inputUsername" class="input-large"/>
+                                                <input type="text" placeholder="Only 8 Alphanums" msg="invalidUserInput" name="username" id="inputUsername" class="input-large"/>
                                             </div>
                                         </div>
                                     </div>
@@ -76,7 +77,7 @@
                                         <div class="controls">
                                             <div class="input-prepend">
                                                 <span class="add-on"><i class="icon-lock"></i></span>
-                                                <input type="Password" placeholder="Only 8 Alphanums" name="passwd" id="inputPassword" class="input-large" />
+                                                <input type="Password" placeholder="Only 8 Alphanums" msg="invalidPasswordInput" name="password" id="inputPassword" class="input-large" />
                                             </div>
                                         </div>   
                                     </div>
@@ -84,9 +85,9 @@
                                         <div class="controls">
                                             <label class="checkbox">
                                                 <input type="checkbox"> Keep me signed in   ¦
-                                                <a href="#" class="btn btn-link" id="forgotPasswordLnk">Forgot my password</a>
+                                                <a href="forgotPassword.php" class="btn btn-link" id="forgotPasswordLnk">Forgot my password</a>
                                             </label>
-                                            <button type="button" class="btn btn-success" id="btn_login">Sign In</button>
+                                            <button type="button" class="btn btn-success " id="btn_login">Sign In</button>
                                             <button type="button" class="btn">Help</button>
                                         </div>
                                     </div>	
@@ -108,7 +109,7 @@
                                         <div class="controls">
                                             <div class="input-prepend">
                                                 <span class="add-on"><i class="icon-briefcase"></i></span>
-                                                <input type="text" placeholder="E.g. Some Software Pvt. Ltd." id="inputCompanyName" class="input-large" />
+                                                <input type="text" placeholder="E.g. Some Software Pvt. Ltd." name="string" id="inputCompanyName" class="input-large" />
                                             </div>
                                         </div>
                                     </div>
@@ -117,7 +118,7 @@
                                         <div class="controls">
                                             <div class="input-prepend">
                                                 <span class="add-on"><i class="icon-user"></i></span>
-                                                <input type="text" placeholder="E.g. Ashutosh" id="inputFirst" class="input-large" />
+                                                <input type="text" placeholder="E.g. Ashutosh" name="string" id="inputFirst" class="input-large" />
                                             </div>
                                            
                                         </div>
@@ -127,7 +128,7 @@
                                         <div class="controls">
                                             <div class="input-prepend">
                                                 <span class="add-on"><i class="icon-user"></i></span>
-                                                <input type="text" placeholder="E.g. Zambare" id="inputLast" class="input-large" />
+                                                <input type="text" placeholder="E.g. Zambare" name="string" id="inputLast" class="input-large" />
                                             </div>
                                             
                           
@@ -138,7 +139,7 @@
                                         <div class="controls">
                                             <div class="input-prepend">
                                                 <span class="add-on"><i class="icon-envelope"></i></span>
-                                                <input type="text" placeholder="E.g. jobs@saisoft.co.in" id="inputEmail" class="input-large" />
+                                                <input type="text" placeholder="E.g. jobs@saisoft.co.in" name="email" id="inputEmail" class="input-large" />
                                             </div>
                    
                                         </div>
@@ -148,7 +149,7 @@
                                         <div class="controls">            
                                             <div class="input-prepend">
                                                 <span class="add-on"><i class="icon-user"></i></span>
-                                                <input type="text" placeholder="Only 8 Alphanums" id="inputUserId" class="input-large" />
+                                                <input type="text" placeholder="Only 8 Alphanums" name="username" id="inputUserId" class="input-large" />
                                             </div>
                                            
                                         </div>
@@ -158,7 +159,7 @@
                                         <div class="controls">
                                             <div class="input-prepend">
                                                 <span class="add-on"><i class="icon-briefcase"></i></span>
-                                                <input type="password" placeholder="Only 8 Alphanums" id="UserPassword" class="input-large" />
+                                                <input type="password" msg="Invalid password " placeholder="Only 8 Alphanums" name="password" id="UserPassword" class="input-large" />
                                             </div>
                                           
                                         </div>
@@ -169,7 +170,7 @@
                                         <div class="controls">
                                             <div class="input-prepend">
                                                 <span class="add-on"><i class="icon-briefcase"></i></span>
-                                                <input type="password" placeholder="Type above Password" id="inputconfirmPassword" class="input-large" />
+                                                <input type="password" placeholder="Type above Password" name="conpass" id="inputconfirmPassword" class="input-large" />
                                             </div>
                                           
                                         </div>
@@ -178,7 +179,7 @@
                                     <div class="control-group">
                                         <div class="controls">
                                             <label class="checkbox">
-                                                <input type="checkbox"> I agree all your <a href="#">Terms of Services</a>
+                                                <input type="checkbox"> I agree all your <a href="termsofservice.php" class="btn btn-link" id="termOfService">Terms of Services</a>
                                             </label>
                                             <button type="button" class="btn btn-success" id="btn_signup">Sign Up</button>
                                             <button type="button" class="btn">Help</button>

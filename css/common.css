@@ -1,9 +1,18 @@
 body{
-background: url("../img/home-slant-pattern.png") repeat scroll 0 0 transparent  !important;
+    background: url("../img/home-slant-pattern.png") repeat scroll 0 0 transparent  !important;
 }
 
 .heading{
-    background-color: #8FBC8F;
+    background: #e1ffff; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2UxZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjclIiBzdG9wLWNvbG9yPSIjZTFmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTIlIiBzdG9wLWNvbG9yPSIjZTFmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTIlIiBzdG9wLWNvbG9yPSIjZmRmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMzAlIiBzdG9wLWNvbG9yPSIjZTZmOGZkIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNTQlIiBzdG9wLWNvbG9yPSIjYzhlZWZiIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNzUlIiBzdG9wLWNvbG9yPSIjYmVlNGY4IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2IxZDhmNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(top, #e1ffff 0%, #e1ffff 7%, #e1ffff 12%, #fdffff 12%, #e6f8fd 30%, #c8eefb 54%, #bee4f8 75%, #b1d8f5 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e1ffff), color-stop(7%,#e1ffff), color-stop(12%,#e1ffff), color-stop(12%,#fdffff), color-stop(30%,#e6f8fd), color-stop(54%,#c8eefb), color-stop(75%,#bee4f8), color-stop(100%,#b1d8f5)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#b1d8f5',GradientType=0 ); /* IE6-8 */
     margin: -18px -18px 14px;
     padding: 5px 10px 1px 24px;
     border-radius: 5px 5px 0 0;
@@ -11,3 +20,110 @@ background: url("../img/home-slant-pattern.png") repeat scroll 0 0 transparent  
 .visibility{
     display:none;
 }
+
+.shortcuts {
+    text-align: center;
+}
+
+.shortcuts .shortcut {
+    background: linear-gradient(to bottom, #FFFFFF 0%, #EEEEEE 100%) repeat-x scroll 0 0 #F3F3F3;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px 5px 5px 5px;
+    display: inline-block;
+    margin: 0 11px 0em;
+    padding: 15px 0;
+    text-decoration: none;
+    vertical-align: top;
+    width: 110px;
+    color: #444;
+    font-size: 17px;
+}
+
+.shortcuts .stats{
+    background: linear-gradient(to bottom, #FFFFFF 0%, #EEEEEE 100%) repeat-x scroll 0 0 #F3F3F3;
+    border: 1px solid #ADADAD;
+    border-radius: 5px 5px 5px 5px;
+    color: #444444;
+    display: inline-block;
+    font-size: 17px;
+    height: 130px;
+    margin: 0 11px 0;
+    padding: 15px 0;
+    text-decoration: none;
+    vertical-align: top;
+    width: 17%;
+}
+
+.statusColor{
+    background-color: #87CEEB;
+    border-radius: 0 34px 0 34px;
+    height: 25px;
+    width: 100%;
+}
+
+.statusCount{
+    font-size: 14px;
+    text-align: center;
+}
+
+.addProjectBtn{
+    background-color: #87CEEB;
+    border: 1px solid #CCCCCC;
+    border-radius: 7px 7px 7px 7px;
+    height: 85px;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0 0;
+    margin-left: 28%;
+}
+
+.addProjectBtn a{
+    color: #000000;
+    font-size: 36px;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.thumbnail{
+    margin-bottom: 30px !important;
+}
+
+
+.row-fluid .projectsWrapper [class*="span"]:first-child {
+    margin-left: 2.5641% !important;
+}
+
+.row-fluid .projectsWrapper .span3 {
+    width: 22.3% !important;
+}
+
+
+.pageLoadingOverlay {
+    height: 100%;
+    width: 100%;
+    display: block;
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5) url("../img/loading.gif") no-repeat center center; }
+
+.pageOverlay {
+    opacity : 0.4;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    display: block;
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.placeholder{
+    color:#A3A3A3 !important;
+}
+
+
+
+

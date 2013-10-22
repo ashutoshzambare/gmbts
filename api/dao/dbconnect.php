@@ -7,6 +7,6 @@ require 'readbean/rb.php';
 
 
 //set up
- R::setup('mysql:host=127.0.0.1; dbname=sssvvmdb','root','');
+ R::setup('mysql:host=127.0.0.1; dbname=GMBTS','root','');
  
 ?>

@@ -103,5 +103,88 @@ function validation(value, type, size) {
         return true;
 }
 
+function validateAndShowError(arrayInput, errorDiv){
+    var msg = '';
+        
+    for(var i=0; i< arrayInput.length; i++){
+        var inputFields = arrayInput[i].split(",");
+        var inputFieldId = '#' + inputFields[0];
+        var regExp = inputFields[1];
+        var errorMsg = inputFields[2];
+        if(!validation($(inputFieldId).val(), regExp)) msg += errorMsg +"<br/>";
+    }
+       
+        
+    if(msg !== '') {
+        $('#'+errorDiv).html(msg).show();
+        return false;
+    }else{
+        $('#'+errorDiv).html(msg).hide();
+        return true;
+    }
+}
+
+function showProgress() {
+    toggleLoading();
+}
+function hideProgress() {
+    toggleLoading();
+//$('#password').removeAttr('disabled');
+}
+
+function toggleLoading(){
+    if($loadingOpen){
+        //hide loading screen		
+        $('.pageLoadingOverlay').remove()
+		
+        $loadingOpen =  false;
+    }
+    else{
+        //show loading screen
+		
+        var scrollPos = (window.pageYOffset > $('html').scrollTop())?(window.pageYOffset):($('html').scrollTop()),
+        imgYPos = scrollPos + (($(window).height() / 2 ) -30 ) ,
+        overlayObj = $('<div class="pageLoadingOverlay"></div>').height($(document).height())
+        .css('background-position', 'center '+imgYPos+'px');		
+        $('body').append(overlayObj);
+		
+        $loadingOpen =  true;
+    }
+}
+
+$(function() {
+	var input = document.createElement("input");
+    if(('placeholder' in input)==false) { 
+		$('[placeholder]').focus(function() {
+			var i = $(this);
+			if(i.val() == i.attr('placeholder')) {
+				i.val('').removeClass('placeholder');
+				if(i.hasClass('password')) {
+					i.removeClass('password');
+					this.type='password';
+				}			
+			}
+		}).blur(function() {
+			var i = $(this);	
+			if(i.val() == '' || i.val() == i.attr('placeholder')) {
+				if(this.type=='password') {
+					i.addClass('password');
+					this.type='text';
+				}
+				i.addClass('placeholder').val(i.attr('placeholder'));
+			}
+		}).blur().parents('form').submit(function() {
+			$(this).find('[placeholder]').each(function() {
+				var i = $(this);
+				if(i.val() == i.attr('placeholder'))
+					i.val('');
+			})
+		});
+	}
+})
+
+
+
+
 
 

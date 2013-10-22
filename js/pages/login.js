@@ -1,65 +1,59 @@
 $(document).ready(function() {
-     $("#login").trigger("reset");
+    $("#login").trigger("reset");
+    
+    $("#btn_login").attr("disabled", "disabled");
+    
     $("#btn_login").bind("click", function() {
-      
-        var inputArray = new Array();
-        inputArray.push("inputUsername,username,"+invalidUserInput);
-        inputArray.push("inputPassword,password,"+invalidPasswordInput);
-        validateAndShowError(inputArray, "loginmsg");
-    // showProgress();
-    //login($("#username").val(), $("#password").val());
-    //startAppTimer(MAX_TRANSACTION_TIME);
-    //appstate = trans.TRAN_LOGIN;
-        
+        console.log("UserName is: "+ $("#inputUsername").val() +" and Password is: "+ $("#inputPassword").val());
+        login($("#inputUsername").val(),$("#inputPassword").val());
+        showProgress();
     });
 	
-	$("#forgotPasswordLnk").bind("click", function() {
-      
-       bootbox.prompt(forgotPasswordMailReq, function(result) {
-		if (result === null) {
-			console.log("Prompt dismissed");
-		} else {
-			console.log("Hi <b>"+result+"</b>");
-		}
-		});
-        
+    $("#login input").keyup(function(){ 
+        commonLoginaValidation(); 
     });
-	
-    
-     $("#inputUsername").bind("keyup", function() {
-        var inputArray = new Array();
-        inputArray.push("inputUsername,username,"+invalidUserInput);
-        inputArray.push("inputPassword,password,"+invalidPasswordInput);
-        validateAndShowError(inputArray, "loginmsg");
-    });
-    
-    $("#inputPassword").bind("keyup", function() {
-        var inputArray = new Array();
-        inputArray.push("inputUsername,username,"+invalidUserInput);
-        inputArray.push("inputPassword,password,"+invalidPasswordInput);
-        validateAndShowError(inputArray, "loginmsg");
-    });
+
 });
 
-function validateAndShowError(arrayInput, errorDiv){
-    var msg = '';
-        
-    for(var i=0; i< arrayInput.length; i++){
-        
-        var inputFields = arrayInput[i].split(",");
-        var inputFieldId = '#' + inputFields[0];
-        var regExp = inputFields[1];
-        var errorMsg = inputFields[2];
-        if(!validation($(inputFieldId).val(), regExp)) msg += errorMsg +"<br/>";
+function commonLoginaValidation() {
+       
+    var inputArray = new Array();
+    inputArray.push("inputUsername,username,"+invalidUserInput);
+    inputArray.push("inputPassword,password,"+invalidPasswordInput);
+    if(validateAndShowError(inputArray, "loginmsg")){
+        $("#btn_login").removeAttr("disabled"); 
+    }  
+    else{
+        $("#btn_login").attr("disabled", "disabled");
     }
         
-    if(msg !== '') {
-        $('#'+errorDiv).html(msg).show();
-        return false;
-    }else{
-         $('#'+errorDiv).html(msg).hide();
-        return true;
-    }
-
 }
 
+
+function login(username, password){
+
+    var data = new Object();
+    data.loginName = username;
+    data.loginPassword = password;
+       
+    data = JSON.stringify(data);
+    $.ajax({
+        type: "POST",
+        contentType: 'application/json',
+        url: "api/login",
+        data: data,
+        success: function(data, textStatus, jqXHR){
+            hideProgress();
+            data = JSON.parse(data);
+            if(data.error){
+                showAlertMsg(data.error.text);
+            }else{
+                window.location=data.success.text;
+            }
+        },
+        error:function(){
+            hideProgress();
+            showAlertMsg("Wrong User Name or Password");
+        }  
+    });  
+}
