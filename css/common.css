@@ -124,6 +124,19 @@ body{
     color:#A3A3A3 !important;
 }
 
+.face_{
+    background-position: 20px;
+}
 
 
-
+[class^="face_"], [class*="face_"] {
+    background-image: url("C:\xampp\htdocs\gmbts\img\face_avatars_full");
+    background-position: 14px 14px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 14px;
+    line-height: 14px;
+    margin-top: 1px;
+    vertical-align: text-top;
+    width: 14px;
+}

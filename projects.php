@@ -73,8 +73,8 @@
                                             <div class="span11 projectsWrapper">
                                                 <div class="span3">
                                                     <div class="thumbnail" style="padding: 0">
-                                                        <div style="padding:4px">
-                                                            <img alt="300x200" style="width: 100%" src="http://placehold.it/200x150"/>
+                                                        <div style="padding:4px" >
+                                                            <p><i class="face_11"></i></p>
                                                         </div>
                                                         <div class="caption">
                                                             <h2>Project A</h2>
