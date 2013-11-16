@@ -1,58 +1,31 @@
 <?php
 
-
-
 session_start();
 
 require 'Slim/Slim.php';
-require 'dbConnection.php';
+require 'dao/dbconnect.php';
 require 'ResponceObject.php';
 //require 'services/*.php';
-//require_once('../FirePHPCore/fb.php');
-
-
-//$login = $log->getLogin();
-//$userLog = $log->isCurrentLoggedUser();
-
-/*$logo = new logoutFunction();
-$logout = $logo->getLogout(); 
-
-$getusr = new getUserFunction();
-$getUsers = $getusr->getUsers();
-
-$clog = new loggedUserFunction();
-$currUser = $clog->getCurrentLoggedinUser();
-
-$mag = new Magazine();
-$maga = $mag->getMagazine();*/
+require_once('../FirePHPCore/fb.php');
 
 
 $app = new Slim();
-//$app->get('/wines', 'getWines');
-//$app->get('/wines/:id',	'getWine');
-//$app->get('/wines/search/:query', 'findByName');
-//$app->post('/wines', 'addWine');
-//$app->put('/wines/:id', 'updateWine');
-//$app->delete('/wines/:id',	'deleteWine');
 $app->get('/test', 'test');
 $app->post('/login', 'getLogin');
 $app->post('/logout', 'getLogout');
-$app->get('/users', 'getUsers');
 $app->POST('/user', 'getCurrentLoggedinUser');
 $app->POST('/isUserLoggedIn', 'isCurrentLoggedUser');
-$app->POST('/getMagazine', 'getMagazine');
 $app->POST('/signup', 'signup');
 
 
 
 $app->run();
 
-
-function test(){
+function test() {
     echo 'Hey I am working';
 }
 
-function signup(){
+function signup() {
     $request = Slim::getInstance()->request();
     $SignUpUser = json_decode($request->getBody());
     $flag = "fail";
@@ -66,52 +39,44 @@ function signup(){
         $user->password = md5($SignUpUser->password);
         $id = R::store($user);
         $flag = "success";
-    }  catch (Exception $e){
+    } catch (Exception $e) {
         $flag = "fail";
     }
     echo $flag;
 }
 
- function getLogin() {
+function getLogin() {
     $request = Slim::getInstance()->request();
     $login = json_decode($request->getBody());
-    fb('$login->loginName' + $login->email);
-    fb('$login->loginPassword' + $login->loginPassword);
-    //$logs = new loginFunctions();
-    //$check = $logs->getlogin($login);
-      try {
-        if ($loginCaptcha == $_SESSION["code"]) {
-            fb("I am here");
-            $user_id = $login->loginName;
-            $password = $login->loginPassword;
-            $user = R::findOne('users', 'UserID=:userId', array(':userId' => $user_id));
-            $userPassword = $user->Password;
-            fb($user);
-            if ($user && ($password == $userPassword)) {             
-                $_SESSION['UserID'] = $user->UserID;
-                $_SESSION['LoginID'] = $user->LoginID;
-                $_SESSION['Gender'] = $user->Gender;
-                $_SESSION['GoldMember'] = $user->GoldMember;
-                $_SESSION['EmailAddress'] = $user->EmailAddress;
-                $_SESSION['LOGIN_STATUS'] = 'loggedIn';
-                $resDto = new ResponseDto();
-                $resDto->success = false;
-                $resDto->errorcode = 1;
-                $resDto->errorMessage = $resDto->INVALID_USER;
-                echo"success";
-                echo json_encode($resDto);
-            } else {
-                echo '{"error":{"text": "Wrong Username or Password"}}';
-            }
-            $db = null;
-        } 
+    try {
+        $email = $login->loginName;
+        $password = $login->loginPassword;
+        fb('I am in login');
+        fb('$login->loginName'.$email);
+        fb('$login->loginPassword'.$password);
+        $user = R::findOne('users', 'email_id=:emailId', array(':emailId' => $email));
+        $hash = md5($password);
+        if ($user && ($user->password == $hash)) {
+            $_SESSION['UserID'] = $user->UserID;
+            $_SESSION['LoginID'] = $user->LoginID;
+            $_SESSION['Gender'] = $user->Gender;
+            $_SESSION['GoldMember'] = $user->GoldMember;
+            $_SESSION['EmailAddress'] = $user->EmailAddress;
+            $_SESSION['LOGIN_STATUS'] = 'loggedIn';
+            $resDto = new ResponseDto();
+            $resDto->success = TRUE;
+            $resDto->errorcode = 0;
+            $json = str_replace('\\u0000', "", json_encode($resDto));
+            fb('$response'.$json);
+            echo $json;
+        } else {
+            echo '{"error":{"text": "Wrong Username or Password"}}';
+        }
+        $db = null;
     } catch (PDOException $e) {
         echo '{"error":{"text":' . $e->getMessage() . '}}';
     }
-    
-  }
-  
-  
+}
 
 function getLogout() {
     $_SESSION['UserID'] = '';
@@ -120,17 +85,6 @@ function getLogout() {
     $_SESSION['GoldMember'] = '';
     session_destroy();
     echo "main.php";
-}
-
-function getUsers() {
-  
-    try {
-      
-        $user = R::find('users');
-        echo ($user);
-    } catch (PDOException $e) {
-        echo '{"error":{"text":' . $e->getMessage() . '}}';
-    }
 }
 
 function getCurrentLoggedinUser() {
@@ -156,32 +110,4 @@ function isCurrentLoggedUser() {
     }
 }
 
-function getMagazine() {
-    $sql = "SELECT 	ProfileID, 
-	MaritalStatus, 
-	Height, 
-	Complexion, 
-	Caste, 
-	EducationIn, 
-	Profession, 
-	CityID, 
-	AnnualIncome 
-	 
-	FROM 
-	user_profile 
-	LIMIT 0, 30";
-    try {
-        $users = R::getAll('select ProfileID,MaritalStatus, Height, Complexion, Caste, EducationIn, Profession, CityID, AnnualIncome from user_profile');
-        if ($users) {
-            echo json_encode($users);
-        } else {
-            echo "error";
-        }
-    } catch (PDOException $e) {
-        echo '{"error":{"text":' . $e->getMessage() . '}}';
-    }
-        
-        }
-
- 
 ?>

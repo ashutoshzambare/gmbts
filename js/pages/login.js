@@ -18,7 +18,7 @@ $(document).ready(function() {
 function commonLoginaValidation() {
        
     var inputArray = new Array();
-    inputArray.push("inputUsername,username,"+invalidUserInput);
+    inputArray.push("inputUsername,email,"+invalidEmail);
     inputArray.push("inputPassword,password,"+invalidPasswordInput);
     if(validateAndShowError(inputArray, "loginmsg")){
         $("#btn_login").removeAttr("disabled"); 

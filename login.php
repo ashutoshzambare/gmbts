@@ -68,7 +68,7 @@
                                         <div class="controls">
                                             <div class="input-prepend">
                                                 <span class="add-on"><i class="icon-user"></i></span>
-                                                <input type="text" placeholder="Only 8 Alphanums" msg="invalidUserInput" name="username" id="inputUsername" class="input-large"/>
+                                                <input type="text" placeholder="E.g. jobs@saisoft.co.in"  msg="invalidUserInput" name="username" id="inputUsername" class="input-large"/>
                                             </div>
                                         </div>
                                     </div>
