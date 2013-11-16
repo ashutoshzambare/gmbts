@@ -66,7 +66,8 @@ function getLogin() {
             $resDto = new ResponseDto();
             $resDto->success = TRUE;
             $resDto->errorcode = 0;
-            $json = str_replace('\\u0000', "", json_encode($resDto));
+            $json = json_encode( (array)$resDto );
+            $json = str_replace ("\u0000ResponseDto\u0000", "",  $json);
             fb('$response'.$json);
             echo $json;
         } else {
