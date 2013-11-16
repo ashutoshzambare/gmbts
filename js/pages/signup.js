@@ -7,13 +7,15 @@ $(document).ready(function() {
         if (!($('#acceptTermofService').is(":checked")))
         {
             $("#signupmsg").html("Please accept Terms of service to proceed.").show();
-        }else{
+        }
+        else
+        {
             $("#signupmsg").hide();
             showProgress();
             //   console.log("Company Name is: "+ $("#inputCompanyName").val() +" and First Name is: "+ $("#inputFirst").val()+" and Last Name is: "+ $("#inputLast").val()+" and Email is: "+ $("#inputEmail").val() +" and User Password is: "+ $("#UserPassword").val()+" and confirm Password is: "+ $("#inputconfirmPassword").val()  );
             signup($("#inputCompanyName").val(),$("#inputFirst").val(),$("#inputLast").val(),$("#inputEmail").val(),$("#UserPassword").val());
+            $("#signup").trigger("reset");        
         }
-           
     });
     
     $("#acceptTermofService").bind("click",function(){
