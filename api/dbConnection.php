@@ -4,12 +4,8 @@
 
 require 'readbean/rb.php';
 
-//set up
+//set up database
 
- R::setup('mysql:host=127.0.0.1; dbname=sssvvmdb','root','');
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+ R::setup('mysql:host=127.0.0.1; dbname=gmbtsdb','root','');
 
 ?>

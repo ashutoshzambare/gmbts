@@ -5,7 +5,7 @@
 session_start();
 
 require 'Slim/Slim.php';
-require 'dao/dbconnect.php';
+require 'dbConnection.php';
 require 'ResponceObject.php';
 //require 'services/*.php';
 //require_once('../FirePHPCore/fb.php');
@@ -34,21 +34,48 @@ $app = new Slim();
 //$app->post('/wines', 'addWine');
 //$app->put('/wines/:id', 'updateWine');
 //$app->delete('/wines/:id',	'deleteWine');
-
+$app->get('/test', 'test');
 $app->post('/login', 'getLogin');
 $app->post('/logout', 'getLogout');
 $app->get('/users', 'getUsers');
 $app->POST('/user', 'getCurrentLoggedinUser');
 $app->POST('/isUserLoggedIn', 'isCurrentLoggedUser');
 $app->POST('/getMagazine', 'getMagazine');
+$app->POST('/signup', 'signup');
+
 
 
 $app->run();
 
+
+function test(){
+    echo 'Hey I am working';
+}
+
+function signup(){
+    $request = Slim::getInstance()->request();
+    $SignUpUser = json_decode($request->getBody());
+    $flag = "fail";
+    try {
+        $user = R::dispense('users');
+        $user->emailId = $SignUpUser->email;
+        $user->companyName = $SignUpUser->companyName;
+        $user->firstName = $SignUpUser->firstName;
+        $user->lastName = $SignUpUser->lastName;
+        $user->isActive = "N";
+        $user->password = md5($SignUpUser->password);
+        $id = R::store($user);
+        $flag = "success";
+    }  catch (Exception $e){
+        $flag = "fail";
+    }
+    echo $flag;
+}
+
  function getLogin() {
     $request = Slim::getInstance()->request();
     $login = json_decode($request->getBody());
-    fb('$login->loginName' + $login->loginName);
+    fb('$login->loginName' + $login->email);
     fb('$login->loginPassword' + $login->loginPassword);
     //$logs = new loginFunctions();
     //$check = $logs->getlogin($login);

@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="css/bootstrap-custom.css"/>
         <link rel="stylesheet" href="css/common.css"/>
 
-        
+
         <!-- HTML5 Shim, for IE6-IE8 support of HTML5 elements -->
         <!--[if lt IE 9]>
                 <script src="js/html5shiv.js"></script>
@@ -64,7 +64,7 @@
                                         <h4 class="form-heading">Sign In</h4>
                                     </div>
                                     <div class="control-group">
-                                        <label class="control-label" for="inputUsername">Username</label>
+                                        <label class="control-label" for="inputUsername">Email</label>
                                         <div class="controls">
                                             <div class="input-prepend">
                                                 <span class="add-on"><i class="icon-user"></i></span>
@@ -120,7 +120,7 @@
                                                 <span class="add-on"><i class="icon-user"></i></span>
                                                 <input type="text" placeholder="E.g. Ashutosh" name="string" id="inputFirst" class="input-large" />
                                             </div>
-                                           
+
                                         </div>
                                     </div>
                                     <div class="control-group">
@@ -130,8 +130,8 @@
                                                 <span class="add-on"><i class="icon-user"></i></span>
                                                 <input type="text" placeholder="E.g. Zambare" name="string" id="inputLast" class="input-large" />
                                             </div>
-                                            
-                          
+
+
                                         </div>
                                     </div>
                                     <div class="control-group">
@@ -141,17 +141,7 @@
                                                 <span class="add-on"><i class="icon-envelope"></i></span>
                                                 <input type="text" placeholder="E.g. jobs@saisoft.co.in" name="email" id="inputEmail" class="input-large" />
                                             </div>
-                   
-                                        </div>
-                                    </div>
-                                    <div class="control-group">
-                                        <label class="control-label" for="inputUser">Username</label>
-                                        <div class="controls">            
-                                            <div class="input-prepend">
-                                                <span class="add-on"><i class="icon-user"></i></span>
-                                                <input type="text" placeholder="Only 8 Alphanums" name="username" id="inputUserId" class="input-large" />
-                                            </div>
-                                           
+
                                         </div>
                                     </div>
                                     <div class="control-group">
@@ -161,35 +151,34 @@
                                                 <span class="add-on"><i class="icon-briefcase"></i></span>
                                                 <input type="password" msg="Invalid password " placeholder="Only 8 Alphanums" name="password" id="UserPassword" class="input-large" />
                                             </div>
-                                          
+
                                         </div>
                                     </div>
-                                    
-                                     <div class="control-group">
+
+                                    <div class="control-group">
                                         <label class="control-label" for="inputPassword">Confirm Password</label>
                                         <div class="controls">
                                             <div class="input-prepend">
                                                 <span class="add-on"><i class="icon-briefcase"></i></span>
                                                 <input type="password" placeholder="Type above Password" name="conpass" id="inputconfirmPassword" class="input-large" />
                                             </div>
-                                          
+
                                         </div>
                                     </div>
-                                    
+
                                     <div class="control-group">
                                         <div class="controls">
                                             <label class="checkbox">
-                                                <input type="checkbox"> I agree all your <a href="termsofservice.php" class="btn btn-link" id="termOfService">Terms of Services</a>
+                                                <input id="acceptTermofService" type="checkbox"> I agree all your <a href="termsofservice.php" class="btn btn-link" id="termOfService">Terms of Services</a>
                                             </label>
                                             <button type="button" class="btn btn-success" id="btn_signup">Sign Up</button>
                                             <button type="button" class="btn">Help</button>
                                         </div>
-                                    </div>	
-                                    <div class="alert alert-error visibility"  id="signupmsg">
-                                        <button type="button" class="close" data-dismiss="alert">×</button>
-                                        <strong>Confirmation: </strong> A confirmation email has been sent to your email.<br>
-                                        Thank you for your registration.
                                     </div>
+                                    <div class="alert alert-error visibility"  id="signupmsg">
+
+                                    </div>
+                      
                                 </form>	
                             </div>                            
                         </div>
@@ -203,12 +192,12 @@
         <script type="text/javascript" src="js/bootstrap-button.js"></script>
         <script type="text/javascript" src="js/application.js"></script>
         <script type="text/javascript" src="js/common/ErrorMessages.js"></script>
-		<script type="text/javascript" src="js/bootbox.min.js"></script>
-		
+        <script type="text/javascript" src="js/bootbox.min.js"></script>
+
         <script src="js/pages/login.js"></script>
         <script src="js/pages/signup.js"></script>
         <script src="js/common/app.js"></script>
-         
+
 
     </body>
 </html>
