@@ -48,7 +48,7 @@ function login(username, password){
             if(data.error){
                 showAlertMsg(data.error.text);
             }else{
-                window.location=data.success.text;
+                window.location=data.target;
             }
         },
         error:function(){

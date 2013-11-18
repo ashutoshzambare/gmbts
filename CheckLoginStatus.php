@@ -1,8 +1,11 @@
 <?php
+ include_once 'FirePHPCore/fb.php';
  session_start();
+ fb('I am in login');
  if(!isset($_SESSION['LOGIN_STATUS'])){
-      header('location:login.php');
- }else{
-      header('location:projects.php');
+      header('Location: login');
+ }
+ else{
+      header('Location: projects');
  }
 ?>

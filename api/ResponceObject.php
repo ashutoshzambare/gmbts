@@ -6,6 +6,7 @@ class ResponseDto {
     private $errorcode;
     private $errorMessage;
     private $text;
+    private $target;
 
     public function __get($property) {
         if (property_exists($this, $property)) {
