@@ -28,7 +28,7 @@ function test() {
 function signup() {
     $request = Slim::getInstance()->request();
     $SignUpUser = json_decode($request->getBody());
-    $flag = "fail";
+    $resDto = new ResponseDto();
     try {
         $user = R::dispense('users');
         $user->emailId = $SignUpUser->email;
@@ -38,11 +38,16 @@ function signup() {
         $user->isActive = "N";
         $user->password = md5($SignUpUser->password);
         $id = R::store($user);
-        $flag = "success";
+        $resDto->success = TRUE;
+        $resDto->errorcode = 0;
     } catch (Exception $e) {
-        $flag = "fail";
+        $resDto->success = FALSE;
+        $resDto->errorcode = 1;
     }
-    echo $flag;
+        $json = json_encode( (array)$resDto );
+        $json = str_replace ("\u0000ResponseDto\u0000", "",  $json);
+        fb('$response'.$json);
+        echo $json;
 }
 
 function getLogin() {
@@ -56,28 +61,30 @@ function getLogin() {
         fb('$login->loginPassword'.$password);
         $user = R::findOne('users', 'email_id=:emailId', array(':emailId' => $email));
         $hash = md5($password);
-        if ($user && ($user->password == $hash)) {
+        $resDto = new ResponseDto();
+        if ($user && ($user->password == $hash) && $user->isActive == "Y") {
             $_SESSION['UserID'] = $user->emailId;
             $_SESSION['LoginID'] = $user->LoginID;
             $_SESSION['Gender'] = $user->Gender;
             $_SESSION['GoldMember'] = $user->GoldMember;
             $_SESSION['EmailAddress'] = $user->EmailAddress;
             $_SESSION['LOGIN_STATUS'] = 'loggedIn';
-            $resDto = new ResponseDto();
             $resDto->success = TRUE;
             $resDto->errorcode = 0;
             $resDto->target="projects";
-            $json = json_encode( (array)$resDto );
-            $json = str_replace ("\u0000ResponseDto\u0000", "",  $json);
             fb('$response'.$json);
-            echo $json;
         } else {
-            echo '{"error":{"text": "Wrong Username or Password"}}';
+            $resDto->success = FALSE;
+            $resDto->errorcode = 1;
         }
         $db = null;
     } catch (PDOException $e) {
-        echo '{"error":{"text":' . $e->getMessage() . '}}';
+        $resDto->success = FALSE;
+        $resDto->errorcode = 1;
     }
+    $json = json_encode( (array)$resDto );
+    $json = str_replace ("\u0000ResponseDto\u0000", "",  $json);
+    echo $json;
 }
 
 function getLogout() {

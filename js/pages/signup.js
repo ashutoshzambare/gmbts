@@ -74,15 +74,16 @@ function signup(companyName , firstName , lastName , email , password){
         success: function(data, textStatus, jqXHR){
             hideProgress();
             data = JSON.parse(data);
-            if(data.error){
-                showAlertMsg(data.error.text);
+            if(data.success==true){
+                showMessage("User registered Successfully. Check your emial account to activate your accout", "signupmsg", "success");
             }else{
-                window.location=data.success.text;
+                showMessage("Email id already registered. Try with different Id", "signupmsg", "error");
             }
         },
         error:function(){
             hideProgress();
-            showAlertMsg("Wrong Email or Password");
+            showMessage("Service is unavailabe, Please try later", "signupmsg", "error");
         }  
     });  
 }
+
