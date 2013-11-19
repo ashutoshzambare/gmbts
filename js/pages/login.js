@@ -45,15 +45,17 @@ function login(username, password){
         success: function(data, textStatus, jqXHR){
             hideProgress();
             data = JSON.parse(data);
-            if(data.error){
-                showAlertMsg(data.error.text);
-            }else{
+            if(data.success==true){
                 window.location=data.target;
+            }else if(data.errorMessage=="activate"){
+                showMessage("Please activate your account", "loginmsg", "error");
+            }else{
+                showMessage("Invalid Emaild or Password", "loginmsg", "error"); 
             }
         },
         error:function(){
             hideProgress();
-            showAlertMsg("Wrong User Name or Password");
+            showMessage("Service is unavailabe, Please try later", "loginmsg", "error");
         }  
     });  
 }

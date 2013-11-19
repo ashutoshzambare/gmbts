@@ -181,9 +181,26 @@ $(function() {
 			})
 		});
 	}
-})
+});
 
 
+function showMessage(message, divId, type){
+    var msgDiv = $('#'+divId);
+    msgDiv.html(message);
+    switch(type){
+        case 'error':msgDiv.addClass('alert-error');
+                     break;
+                 
+        case 'info':msgDiv.removeClass('alert-error');
+                    msgDiv.addClass('alert-info');
+                    break;
+        
+        case 'success':msgDiv.removeClass('alert-error');
+                       msgDiv.addClass('alert-success');
+                       break;
+    }
+    msgDiv.show();   
+}
 
 
 

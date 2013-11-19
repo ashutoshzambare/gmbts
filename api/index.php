@@ -62,17 +62,22 @@ function getLogin() {
         $user = R::findOne('users', 'email_id=:emailId', array(':emailId' => $email));
         $hash = md5($password);
         $resDto = new ResponseDto();
-        if ($user && ($user->password == $hash) && $user->isActive == "Y") {
+        if ($user && ($user->password == $hash)) {
             $_SESSION['UserID'] = $user->emailId;
             $_SESSION['LoginID'] = $user->LoginID;
             $_SESSION['Gender'] = $user->Gender;
             $_SESSION['GoldMember'] = $user->GoldMember;
             $_SESSION['EmailAddress'] = $user->EmailAddress;
             $_SESSION['LOGIN_STATUS'] = 'loggedIn';
+            if($user->isActive == "Y"){
             $resDto->success = TRUE;
             $resDto->errorcode = 0;
             $resDto->target="projects";
-            fb('$response'.$json);
+            }else{
+            $resDto->success = FALSE;
+            $resDto->errorcode = 1;
+            $resDto->errorMessage = "activate";
+            }
         } else {
             $resDto->success = FALSE;
             $resDto->errorcode = 1;
@@ -84,6 +89,7 @@ function getLogin() {
     }
     $json = json_encode( (array)$resDto );
     $json = str_replace ("\u0000ResponseDto\u0000", "",  $json);
+    fb('$response'.$json);
     echo $json;
 }
 
